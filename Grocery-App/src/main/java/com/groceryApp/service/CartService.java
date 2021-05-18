@@ -19,15 +19,13 @@ public class CartService {
 		return cartRepositiory.save(cart);
 	}
 	
-	public List<Cart> findAllinCart(Cart cart){
+	public List<Cart> findAll(Cart cart){
 		return cartRepositiory.findAll();
 	}
 	
-	public Cart DeleteById(int id){
-		return cartRepositiory.deleteById(id);
+	public Cart DeleteById(long cartId){
+		return cartRepositiory.deleteById(cartId);
 	}
 	
-	public Cart update(Cart cart) {
-		return cartRepositiory.saveAndFlush(cart);
-	}
+	
 }

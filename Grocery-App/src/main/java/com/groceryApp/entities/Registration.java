@@ -9,13 +9,13 @@ import javax.persistence.Id;
 public class Registration {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long user_Id;
-	private String UserName;
-	private long PhoneNo;
-	private String Email;
-	private String Password;
-	private String Address;
+	private String userName;
+	private long phoneNo;
+	private String email;
+	private String password;
+	private String address;
 	
 	public Registration() {
 //		super();
@@ -25,11 +25,11 @@ public class Registration {
 	public Registration(long user_Id, String userName, long phoneNo, String email, String password, String address) {
 		super();
 		this.user_Id = user_Id;
-		UserName = userName;
-		PhoneNo = phoneNo;
-		Email = email;
-		Password = password;
-		Address = address;
+		this.userName = userName;
+		this.phoneNo = phoneNo;
+		this.email = email;
+		this.password = password;
+		this.address = address;
 	}
 
 	public long getUser_Id() {
@@ -41,50 +41,45 @@ public class Registration {
 	}
 
 	public String getUserName() {
-		return UserName;
+		return userName;
 	}
 
 	public void setUserName(String userName) {
-		UserName = userName;
+		this.userName = userName;
 	}
 
 	public long getPhoneNo() {
-		return PhoneNo;
+		return phoneNo;
 	}
 
 	public void setPhoneNo(long phoneNo) {
-		PhoneNo = phoneNo;
+		this.phoneNo = phoneNo;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
-	
-	
-	
-	
-	
 	
 	
 

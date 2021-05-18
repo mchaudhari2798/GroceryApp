@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,19 +30,16 @@ public class Cartcontroller {
 	@GetMapping("/all")
 	@ResponseBody 
 	public  List<Cart> listAllRegistration(Cart cart) {
-		return cartService.findAllinCart(cart);
+		return cartService.findAll(cart);
 	}
 	
 	
-	@DeleteMapping("/{id}")
-	public Cart DeleteEmployee(@PathVariable("id") int id) {
-		return cartService.DeleteById(id);
+	@DeleteMapping("/{cartId}")
+	public Cart DeleteEmployee(@PathVariable("cartId") long cartId) {
+		return cartService.DeleteById(cartId);
 	}
 	
-	@PutMapping("/{id}")
-	public Cart UpdateCart(@PathVariable("id") int id,@RequestBody Cart cart) {
-		return cartService.update(cart);
-	}
+	
 	
 }
 

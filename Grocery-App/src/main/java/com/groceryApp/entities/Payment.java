@@ -8,11 +8,10 @@ import javax.persistence.Id;
 @Entity
 public class Payment {
 	
-	private String typeOfCard;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long Card_id;
+	private String typeOfCard;
 	private long card_No;
 	private String cardHolderName; 
 	private String cardValidity;
