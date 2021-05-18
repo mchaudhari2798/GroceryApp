@@ -24,7 +24,7 @@ public class CategoriesController {
 	private CategoriesRepository categoriesRepository;
 	
 	@PostMapping("/")
-	public Categories SaveAll(Categories categories) {
+	public Categories SaveAll(@RequestBody Categories categories) {
 		return categoriesRepository.save(categories);
 	}
 	

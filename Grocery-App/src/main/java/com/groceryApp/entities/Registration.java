@@ -10,7 +10,7 @@ public class Registration {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long user_Id;
+	private long user_Id ;
 	private String userName;
 	private long phoneNo;
 	private String email;

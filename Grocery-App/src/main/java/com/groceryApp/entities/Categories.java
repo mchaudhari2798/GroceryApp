@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Categories {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="category_id")
 	private long cat_Id;
 	private String category_name;
