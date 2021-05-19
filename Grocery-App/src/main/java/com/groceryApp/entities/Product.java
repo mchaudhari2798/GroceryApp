@@ -17,9 +17,7 @@ public class Product {
 	private String productName;
 	private int price;
 	
-//	@OneToOne(targetEntity = Categories.class , fetch = FetchType.EAGER )
-//	@JoinColumn(nullable = false, name = "catid")
-//	private Categories categories;
+
 	
 	public Product() {
 
