@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { CartComponent } from './cart/cart.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { SectionComponent } from './section/section.component';
-import { ProductsComponent } from './products/products.component';
-import { RegistrationlistComponent } from './registrationlist/registrationlist.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { RegistrationComponent } from './Components/registration/registration.component';
+import { LoginComponent } from './Components/login/login.component';
+import { CategoriesComponent } from './Components/categories/categories.component';
+import { SectionComponent } from './Components/section/section.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { RegistrationlistComponent } from './Components/registrationlist/registrationlist.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,11 @@ import { RegistrationlistComponent } from './registrationlist/registrationlist.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

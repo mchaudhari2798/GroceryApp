@@ -14,19 +14,33 @@
 			<p class="divider-text">
 				<span class="bg-light">OR</span>
 			</p>
-			<form>
+
+			<form #userForm="ngForm" (ngSubmit)="onSubmit()">
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 					</div>
-					<input name="" class="form-control" placeholder="Full name" type="text">
-				</div> <!-- form-group// -->
+					<input name="username" class="form-control" placeholder="User name" type="text" 
+					#name="ngModel" [(ngModel)]="registration.user_Id"  [class.is-invalid]="name.invalid && name.touched" required minlength="5" />
+
+					<small class="text-danger" [class.d-none]="name.untouched || name.valid">This is required field</small>
+
+				</div><br> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 					</div>
-					<input name="" class="form-control" placeholder="Email address" type="email">
-				</div> <!-- form-group// -->
+					<input name="email" class="form-control" placeholder="Email address" type="email"
+					#email="ngModel" [(ngModel)]="registration.userName"  [class.is-invalid]="email.invalid && email.touched" required minlength="5" />
+				</div><br> <!-- form-group// -->
+				
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+					<input class="form-control" placeholder="Create password" type="password">
+				</div> <br><!-- form-group// -->
+
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
@@ -39,33 +53,16 @@
 						<option value="3">+92</option>
 					</select>
 					<input name="" class="form-control" placeholder="Phone number" type="text">
-				</div> <!-- form-group// -->
-				<!-- <div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-building"></i> </span>
-					</div>
-					<select class="form-control">
-						<option selected=""> Select account type</option>
-						<option>Designer</option>
-						<option>Manager</option>
-						<option>Accaunting</option>
-					</select>
-				</div> form-group end.// -->
+				</div><br> 
 
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+						<span class="input-group-text"> <i class="fa fa-map-pin"></i> </span>
 					</div>
-					<input class="form-control" placeholder="Create password" type="password">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-					</div>
-					<input class="form-control" placeholder="Repeat password" type="password">
-				</div> <!-- form-group// -->
+					<input class="form-control" placeholder="Enter Address" type="text">
+				</div> <br> <!-- form-group// -->
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+					<button type="submit" class="btn btn-primary btn-block" > Create Account </button>
 				</div> <!-- form-group// -->
 				<p class="text-center">Have an account? <a href="" routerLink="/loginpage">Log In</a> </p>
 			</form>
