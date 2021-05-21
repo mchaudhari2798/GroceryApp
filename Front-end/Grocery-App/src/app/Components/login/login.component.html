@@ -8,27 +8,36 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center form_container">
-                <form>
+                
+                <form #userForm="ngForm" (ngSubmit)="onLoginSubmit()">
                     <div class="input-group mb-3">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" name="" class="form-control input_user" value="" placeholder="username">
+                        <input type="text" name="user_Id" class="form-control input_user" value="" placeholder="username"
+                        #username="ngModel" [(ngModel)]="user.emailId"  [class.is-invalid]="username.invalid && username.touched" required minlength="5" />
+
+					<small class="text-danger" [class.d-none]="username.untouched || username.valid">This is required field</small>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+                        <input type="password" name="password" class="form-control input_pass" value="" placeholder="password"
+                        #password="ngModel" [(ngModel)]="user.password"  [class.is-invalid]="password.invalid && password.touched" required minlength="7" />
+                          <br>  
+                        <small class="text-danger" [class.d-none]="password.untouched || password.valid">This is required field</small>
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customControlInline">
-                            <label class="custom-control-label" for="customControlInline">Remember me</label>
+                            <input type="checkbox" class="custom-control-input" id="customControlInline" 
+                            #enabled="ngModel" [(ngModel)]="user.enabled"  [class.is-invalid]="enabled.invalid && enabled.touched" required />                    
+                            <label class="custom-control-label" for="customControlInline">Remember me</label> <br>
+                            <small class="text-danger" [class.d-none]="enabled.untouched || enabled.valid">check me</small>
                         </div>
                     </div>
                         <div class="d-flex justify-content-center mt-3 login_container">
-                 <button type="button" name="button" class="btn login_btn">Login</button>
+                 <button type="submit" name="button" class="btn login_btn" [disabled]="!userForm.valid">Login</button>
                </div>
                 </form>
             </div>

@@ -13,9 +13,13 @@
             </tr>
         </thead>
         
-        <tbody>
+        <tbody *ngIf='users'>
             <tr *ngFor="let user of users">
-                <td>{{users}}</td>
+                <td>{{user.user_Id}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phoneNo}}</td>
+                <td>{{user.address}}</td>
             </tr>
         </tbody>
     </table>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Registration } from '../../classesTS/categories';
+import { Registration } from 'src/app/classesTS/registration';
 import { RegistrationService } from '../../service/registration.service';
 
 @Component({
@@ -10,14 +10,21 @@ import { RegistrationService } from '../../service/registration.service';
 })
 export class RegistrationlistComponent implements OnInit {
 
-  users : Array<Registration> = [];
+  users: any;
 
   constructor(private route : ActivatedRoute,
     private router : Router,
     private regservice:RegistrationService) {}
 
   ngOnInit(): void {
-    
+    this.listAll();
+  }
+
+  listAll(){
+    this.regservice.getreglist().subscribe(resp => {
+      console.log(resp);
+      this.users = resp;
+    });
   }
 
 }

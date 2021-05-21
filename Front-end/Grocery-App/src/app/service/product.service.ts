@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  getAllProducts(){
+    return this.http.get<any>('http://localhost:8080/Categories/all');
+  }
 }

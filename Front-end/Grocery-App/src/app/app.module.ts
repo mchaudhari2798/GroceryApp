@@ -14,6 +14,8 @@ import { SectionComponent } from './Components/section/section.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { RegistrationlistComponent } from './Components/registrationlist/registrationlist.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     CategoriesComponent,
     SectionComponent,
     ProductsComponent,
-    RegistrationlistComponent
+    RegistrationlistComponent,
+    HomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

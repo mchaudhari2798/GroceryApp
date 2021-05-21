@@ -1,5 +1,5 @@
-export class Registration{
-    id?:Number;
+export class Categories{
+    id?:number;
     category_name?:String;
 }
 

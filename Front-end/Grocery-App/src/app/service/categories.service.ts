@@ -5,17 +5,17 @@ import { HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class CategoriesService {
-  [x: string]: any;
-
-
- 
+   
   // private listall = "http://localhost:8080/Categories/";
 
   constructor( private http : HttpClient) { }
 
+  getAllCategories(){
+    return this.http.get<any>('http://localhost:8080/Categories/all');
+  }
 
-getAllCategories(){
-  return this.http.get('http://localhost:8080/Categories/');
-}
+  getAllProducts(){
+    return this.http.get<any>('http://localhost:8080/Categories/all');
+  }
 
 }

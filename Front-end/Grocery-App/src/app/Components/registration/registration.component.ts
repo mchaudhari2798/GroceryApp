@@ -27,6 +27,13 @@ export class RegistrationComponent implements OnInit {
       "phoneNo": this.registration.phoneNo,
       "address":this.registration.address
     }
+
+    this.regService.saveDetails(obj).subscribe(resp=> {
+      alert('Registration Completed');
+      this.router.navigate(['/registrationlist']);
+
+      // console.log(resp);
+    });
   }
   
   }

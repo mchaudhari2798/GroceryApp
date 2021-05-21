@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriesService } from '../../service/categories.service';
 
 @Component({
@@ -9,21 +8,21 @@ import { CategoriesService } from '../../service/categories.service';
 })
 export class CategoriesComponent implements OnInit {
 
-  categories:any;
+  category_name: any;
 
-  constructor(private route : ActivatedRoute,
-    private router:Router,
-    private catService:CategoriesService) { }
+  constructor(
+    private catService:CategoriesService
+    ) { }
 
   ngOnInit(): void {
-    this.router.navigate([]);
-  }
+   
 
-  getEmployees(){
-    this.catService.getAllCategories().subscribe(data =>{
-      this.categories=data;
-      console.log(data);
-    });
+    this.catService.getAllCategories()
+      .subscribe(x => {
+        console.log(x)
+        this.category_name = x;
+      });
+
   }
 
 }
